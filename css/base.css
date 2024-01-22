@@ -36,6 +36,32 @@ code {
     font-family: "Ubuntu Mono", monospace;
 }
 
+nav {
+    border-bottom: 1px solid black;
+}
+
+.crumbs ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.crumb {
+    display: inline-block;
+}
+
+.crumb a::after {
+    display: inline-block;
+    color: black;
+    content: ">";
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 0 3px;
+}
+
+.crumb:last-child a::after {
+    display: none;
+}
+
 @media (prefers-color-scheme: dark) {
     html {
         color: gainsboro;
@@ -54,6 +80,14 @@ code {
 
     a:visited {
         color: #ffb9ff;
+    }
+
+    nav {
+        border-bottom-color: gainsboro;
+    }
+
+    .crumb a::after {
+        color: gainsboro;
     }
 }
 
