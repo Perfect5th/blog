@@ -38,7 +38,7 @@ the gist:
  1. Edit `./env` to set `SITE_ROOT`, `SITE_TITLE`, and `CRUMBS`
  1. Install `markdown`
  1. Run `./convert.sh`
- 1. Server your resulting `./_site/` from wherever you feel like
+ 1. Serve your resulting `./_site/` from wherever you feel like
  
 When I test it locally I do this:
 
