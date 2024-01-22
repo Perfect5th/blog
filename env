@@ -1,3 +1,5 @@
-export SITE_ROOT="/blog"
-export SITE_TITLE="Perfect5th 2.0"
-export CRUMBS="YES"
+[ -z "$SITE_ROOT" ] && export SITE_ROOT="/blog"
+[ -z "$SITE_TITLE" ] && export SITE_TITLE="Perfect5th 2.0"
+[ -z "$CRUMBS" ] && export CRUMBS="YES"
+
+[ "$SITE_ROOT" = "/" ] && export SITE_ROOT=""

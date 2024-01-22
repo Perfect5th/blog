@@ -11,6 +11,7 @@ Feeling cute, might add RSS one day, here's an index of top-level pages that I'v
 personal wiki I used to maintain.
 
  - [An AoC Intro to Haskell](haskell-aoc)
+ - [Simple Site](simple-site.html)
 
    [1]: https://mitchellburton.ca
    [2]: https://github.com/perfect5th/simple-site "Simple Site GitHub Repo"

@@ -1,7 +1,7 @@
 @font-face {
     font-family: "bagnardregular";
-    src: url("/blog/fonts/bagnard-webfont.woff2") format("woff2"),
-         url("/blog/fonts/bagnard-webfont.woff") format("woff");
+    src: url("{{SITE_ROOT}}/fonts/bagnard-webfont.woff2") format("woff2"),
+         url("{{SITE_ROOT}}/fonts/bagnard-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
@@ -36,6 +36,16 @@ code {
     font-family: "Ubuntu Mono", monospace;
 }
 
+blockquote {
+    background-color: #cecece;
+    border-left: 4px solid grey;
+    margin: 0;
+}
+
+blockquote p {
+    padding: 0.5em 1em 0.5em 1em;
+}
+
 nav {
     border-bottom: 1px solid black;
 }
@@ -62,6 +72,11 @@ nav {
     display: none;
 }
 
+footer {
+    text-align: right;
+    border-top: 1px solid black;
+}
+
 @media (prefers-color-scheme: dark) {
     html {
         color: gainsboro;
@@ -72,6 +87,11 @@ nav {
         background-color: gainsboro;
         border-color: white;
         color: #404040;
+    }
+
+    blockquote {
+        background-color: #3a3a3a;
+        border-color: gainsboro;
     }
 
     a {
@@ -88,6 +108,10 @@ nav {
 
     .crumb a::after {
         color: gainsboro;
+    }
+
+    footer {
+        border-top-color: gainsboro;
     }
 }
 
