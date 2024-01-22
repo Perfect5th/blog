@@ -1,1 +1,49 @@
-/* Add your CSS here. */
+@font-face {
+    font-family: "bagnardregular";
+    src: url("/fonts/bagnard-webfont.woff2") format("woff2"),
+         url("/fonts/bagnard-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+
+html {
+    color: #404040;
+    background-color: gainsboro;
+    font-family: "bagnardregular", serif;
+}
+
+body {
+    margin: auto;
+    width: 60%;
+    max-width: 1000px;
+    min-width: 200px;
+}
+
+pre {
+    background-color: #404040;
+    border-color: black;
+    border-style: solid;
+    border-width: 0 0 1em 0;
+    border-radius: 0.5em;
+    color: gainsboro;
+    padding: 1em;
+}
+
+code {
+    font-family: "Ubuntu Mono", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        color: gainsboro;
+        background-color: #404040;
+    }
+
+    pre {
+        background-color: gainsboro;
+        border-color: white;
+        color: #404040;
+    }
+}

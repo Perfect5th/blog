@@ -1,2 +1,2 @@
-export SITE_ROOT="/simple-site"
-export SITE_TITLE="Simple Site"
+export SITE_ROOT="/blog"
+export SITE_TITLE="Perfect5th 2.0"
