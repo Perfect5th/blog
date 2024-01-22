@@ -46,4 +46,12 @@ code {
         border-color: white;
         color: #404040;
     }
+
+    a {
+        color: #94cdff;
+    }
+
+    a:visited {
+        color: #ffb9ff;
+    }
 }
