@@ -1,7 +1,7 @@
 @font-face {
     font-family: "bagnardregular";
-    src: url("/blogs/fonts/bagnard-webfont.woff2") format("woff2"),
-         url("/blogs/fonts/bagnard-webfont.woff") format("woff");
+    src: url("/blog/fonts/bagnard-webfont.woff2") format("woff2"),
+         url("/blog/fonts/bagnard-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
