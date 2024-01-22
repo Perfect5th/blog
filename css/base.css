@@ -56,3 +56,9 @@ code {
         color: #ffb9ff;
     }
 }
+
+@media screen and (max-width: 600px) {
+    body {
+        width: 85%;
+    }
+}
