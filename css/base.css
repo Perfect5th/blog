@@ -57,7 +57,7 @@ code {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 980px) {
     body {
         width: 85%;
     }
