@@ -1,6 +1,6 @@
 # Simple Site
 
-*Created 2024-01-22*
+## 2024-01-22
 
 A couple days ago, my friend [tendermario][1] sent me a message:
 
