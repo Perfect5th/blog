@@ -39,6 +39,7 @@ jobs:
           sudo apt install markdown
           ./convert.sh
           ./generate_rss.py
+          mkdir -p ./_site/rss/
           mv ./feed.xml ./_site/rss/feed.xml
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
