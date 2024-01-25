@@ -98,10 +98,10 @@ class RssElementTree(ElementTree):
 
         element = Element(
             "rss",
-            attrib={"version": "2.0", "xlmns:atom": "http://www.w3.org/2005/Atom"},
+            attrib={"version": "2.0", "xmlns:atom": "http://www.w3.org/2005/Atom"},
         )
 
-        channel = ET.SubElement(element, "channel")
+        channel = Element("channel")
         ET.SubElement(channel, "title").text = title
         ET.SubElement(channel, "description").text = description
         ET.SubElement(channel, "link").text = url
@@ -122,15 +122,25 @@ class RssElementTree(ElementTree):
         element.append(channel)
 
         self.channel = channel
+        self.url = url
 
         return super().__init__(element=element)
 
-    def append_item(self, md_file: MarkdownFile) -> None:
+    def append_item(self, md_file: MarkdownFile, path: pathlib.Path) -> None:
         """Adds `md_file` to the list of RSS items."""
         item = Element("item")
+        str_path = str(path)
+
+        if str_path.endswith("/index.md"):
+            url = self.url + str_path.replace("markdown/", "").replace("/index.html", "/")
+        else:
+            url = self.url + str_path.replace("markdown/", "").replace(".md", ".html")
+
         ET.SubElement(item, "title").text = md_file.title
         ET.SubElement(item, "description").text = md_file.content
         ET.SubElement(item, "pubDate").text = md_file.pub_date.strftime(DATETIME_FORMAT)
+        ET.SubElement(item, "link").text = url
+        ET.SubElement(item, "guid", attrib={"isPermaLink": "true"}).text = url
 
         self.channel.append(item)
 
@@ -223,7 +233,7 @@ def main(
 
     for path, md_file in md_files.items():
         try:
-            rss_tree.append_item(md_file)
+            rss_tree.append_item(md_file, path)
             included_files.append(path)
         except InvalidMarkdownFile as e:
             errors.append(f"Skipped {path}: {e}")
@@ -250,7 +260,5 @@ if __name__ == "__main__":
         print(error, file=sys.stderr)
 
     if rss_tree is not None:
-        print()
-        rss_tree.write(sys.stdout, encoding="unicode", xml_declaration=True)
-        rss_tree.write("feed.xml", encoding="unicode", xml_declaration=True)
-        print()
+        rss_tree.write("./feed.xml", encoding="unicode", xml_declaration=True)
+        print("Wrote feed to ./feed.xml")
